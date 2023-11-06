@@ -12,7 +12,7 @@ namespace StringManipulation.Tests
 
     public class StringOperationTest
     {
-        
+
 
         [Fact]
         public void ConcatenateStrings()
@@ -89,11 +89,26 @@ namespace StringManipulation.Tests
         }
 
         [Fact]
-        public void TruncateString_Exception() 
+        public void TruncateString_Exception()
         {
             var strOperations = new StringOperations();
 
             Assert.ThrowsAny<ArgumentOutOfRangeException>(() => strOperations.TruncateString("This is Platzi", 0));
+        }
+
+        [Theory]
+        [InlineData("V", 5)]
+        [InlineData("X", 10)]
+        [InlineData("III", 3)]
+        [InlineData("IV", 4)]
+        [InlineData("XX", 21)]
+        public void FromRomanToNumber(string romanNumber, int expected)
+        {
+            var strOperations = new StringOperations();
+
+            var result = strOperations.FromRomanToNumber(romanNumber);
+
+            Assert.Equal(expected, result);
         }
     }
 }
