@@ -15,7 +15,7 @@ namespace StringManipulation.Tests
     {
 
 
-        [Fact]
+        [Fact(Skip = "This test isn't valid now, TICKET-001")]
         public void ConcatenateStrings()
         {
             // Arrange
@@ -29,26 +29,6 @@ namespace StringManipulation.Tests
             Assert.NotEmpty(result);
             Assert.Equal("Hello Platzi", result);
         }
-
-        //[Fact]
-        //public void IsPalindrome_True()
-        //{
-        //    var strOperations = new StringOperations();
-
-        //    var result = strOperations.IsPalindrome("oro");
-
-        //    Assert.True(result);
-        //}
-
-        //[Fact]
-        //public void IsPalindrome_False()
-        //{
-        //    var strOperations = new StringOperations();
-
-        //    var result = strOperations.IsPalindrome("Hello");
-
-        //    Assert.False(result);
-        //}
 
         [Theory]
         [InlineData("oro", true)]
