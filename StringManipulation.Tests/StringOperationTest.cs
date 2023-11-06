@@ -43,5 +43,15 @@ namespace StringManipulation.Tests
 
             Assert.False(result);
         }
+
+        [Fact]
+        public void RemoveWhitespace()
+        {
+            var strOperations = new StringOperations();
+
+            var result = strOperations.RemoveWhitespace("Hello I am Randy");
+
+            Assert.Equal("HelloIamRandy", result);
+        }
     }
 }

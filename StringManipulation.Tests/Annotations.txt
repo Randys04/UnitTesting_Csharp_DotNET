@@ -1,0 +1,13 @@
+﻿Estructura AAA
+	Arrange: datos inciales, datos de prueba y demas
+	Act: ejecucion de la prueba
+	Assert: realizar la comprobacion 
+
+F.I.R.S.T principles of testing
+	Fast
+	Isolated/Independent
+	Repeatable
+	Self-validating
+	Thorough
+
+En los casos de funciones que devulven true o false es recomendado realizar la prueba para ambos escenarios (true y false)
