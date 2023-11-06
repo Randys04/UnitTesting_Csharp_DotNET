@@ -30,26 +30,6 @@ namespace StringManipulation.Tests
             Assert.Equal("Hello Platzi", result);
         }
 
-        //[Fact]
-        //public void IsPalindrome_True()
-        //{
-        //    var strOperations = new StringOperations();
-
-        //    var result = strOperations.IsPalindrome("oro");
-
-        //    Assert.True(result);
-        //}
-
-        //[Fact]
-        //public void IsPalindrome_False()
-        //{
-        //    var strOperations = new StringOperations();
-
-        //    var result = strOperations.IsPalindrome("Hello");
-
-        //    Assert.False(result);
-        //}
-
         [Theory]
         [InlineData("oro", true)]
         [InlineData("Hello", false)]
