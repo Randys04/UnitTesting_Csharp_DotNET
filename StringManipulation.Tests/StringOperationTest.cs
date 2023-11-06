@@ -77,5 +77,23 @@ namespace StringManipulation.Tests
 
             Assert.ThrowsAny<ArgumentNullException>(() => strOperations.GetStringLength(null));
         }
+
+        [Fact]
+        public void GetStringLength()
+        {
+            var strOperations = new StringOperations();
+
+            var result = strOperations.GetStringLength("Platzi");
+
+            Assert.Equal(6, result);
+        }
+
+        [Fact]
+        public void TruncateString_Exception() 
+        {
+            var strOperations = new StringOperations();
+
+            Assert.ThrowsAny<ArgumentOutOfRangeException>(() => strOperations.TruncateString("This is Platzi", 0));
+        }
     }
 }
