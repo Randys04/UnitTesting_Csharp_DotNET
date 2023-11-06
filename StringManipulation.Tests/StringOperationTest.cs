@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Humanizer;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,8 +9,11 @@ using Xunit;
 
 namespace StringManipulation.Tests
 {
+
     public class StringOperationTest
     {
+        
+
         [Fact]
         public void ConcatenateStrings()
         {
@@ -52,6 +57,25 @@ namespace StringManipulation.Tests
             var result = strOperations.RemoveWhitespace("Hello I am Randy");
 
             Assert.Equal("HelloIamRandy", result);
+        }
+
+        [Fact]
+        public void QuantintyInWords()
+        {
+            var strOperations = new StringOperations();
+
+            var result = strOperations.QuantintyInWords("dog", 2);
+
+            Assert.StartsWith("dos", result);
+            Assert.Contains("dog", result);
+        }
+
+        [Fact]
+        public void GetStringLength_Exception()
+        {
+            var strOperations = new StringOperations();
+
+            Assert.ThrowsAny<ArgumentNullException>(() => strOperations.GetStringLength(null));
         }
     }
 }
