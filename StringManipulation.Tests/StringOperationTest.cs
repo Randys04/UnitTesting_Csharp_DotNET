@@ -1,6 +1,7 @@
 ﻿using Humanizer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -29,25 +30,39 @@ namespace StringManipulation.Tests
             Assert.Equal("Hello Platzi", result);
         }
 
-        [Fact]
-        public void IsPalindrome_True()
+        //[Fact]
+        //public void IsPalindrome_True()
+        //{
+        //    var strOperations = new StringOperations();
+
+        //    var result = strOperations.IsPalindrome("oro");
+
+        //    Assert.True(result);
+        //}
+
+        //[Fact]
+        //public void IsPalindrome_False()
+        //{
+        //    var strOperations = new StringOperations();
+
+        //    var result = strOperations.IsPalindrome("Hello");
+
+        //    Assert.False(result);
+        //}
+
+        [Theory]
+        [InlineData("oro", true)]
+        [InlineData("Hello", false)]
+        [InlineData("Messi", false)]
+        public void IsPalindrome(string word, bool expected)
         {
             var strOperations = new StringOperations();
 
-            var result = strOperations.IsPalindrome("oro");
+            var result = strOperations.IsPalindrome(word);
 
-            Assert.True(result);
+            Assert.Equal(expected ,result);
         }
 
-        [Fact]
-        public void IsPalindrome_False()
-        {
-            var strOperations = new StringOperations();
-
-            var result = strOperations.IsPalindrome("Hello");
-
-            Assert.False(result);
-        }
 
         [Fact]
         public void RemoveWhitespace()
@@ -101,7 +116,6 @@ namespace StringManipulation.Tests
         [InlineData("X", 10)]
         [InlineData("III", 3)]
         [InlineData("IV", 4)]
-        [InlineData("XX", 21)]
         public void FromRomanToNumber(string romanNumber, int expected)
         {
             var strOperations = new StringOperations();
