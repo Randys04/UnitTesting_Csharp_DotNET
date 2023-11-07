@@ -15,3 +15,5 @@ En los casos de funciones que devulven true o false es recomendado realizar la p
  La librería Moq es una herramienta popular en el mundo de desarrollo de software en C# que se utiliza para crear objetos simulados o "mocks" 
 de clases y interfaces. Estos objetos simulados son útiles en pruebas unitarias y pruebas de integración para aislar el código bajo prueba y 
 verificar su comportamiento sin depender de implementaciones reales de clases o interfaces.
+
+El metodo Setup nos permite configurar una funcion que tenga un mock

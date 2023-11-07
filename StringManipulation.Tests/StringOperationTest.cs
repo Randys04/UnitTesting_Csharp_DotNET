@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Moq;
 using Microsoft.Extensions.Logging;
+using Microsoft.VisualBasic;
 
 namespace StringManipulation.Tests
 {
@@ -117,6 +118,19 @@ namespace StringManipulation.Tests
             var result = strOperations.CountOccurrences("Palabra", 'a');
 
             Assert.Equal(3, result);
+        }
+
+        [Fact]
+        public void ReadFile()
+        {
+            var strOperations = new StringOperations();
+            var mockFileReader = new Mock<IFileReaderConector>();
+            //mockFileReader.Setup(p => p.ReadString("informarion.txt")).Returns("This is an information example");
+            mockFileReader.Setup(p => p.ReadString(It.IsAny<string>())).Returns("This is an information example");
+
+            var result = strOperations.ReadFile(mockFileReader.Object, "information.txt");
+
+            Assert.Equal("This is an information example", result);
         }
     }
 }
