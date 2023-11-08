@@ -29,3 +29,13 @@ Por lo general un procentaje nos indica que tan efectiva es, dicho porcentaje de
 Podemos configurara coverlet, por ejemplo: dotnet test /p:CollectCoverage=true /p:Include="[*]StringManipulation.*"
 Con el ejemplo amterior omitimos todo lo que no pertenesca al namespace StringManipulation
 Si usamos el atributo [ExcludeFromCodeCoverage] el comando seria: dotnet test /p:CollectCoverage=true /p:ExcludeByAttribute="ExcludeFromCodeCoverage"
+
+Para poder generar un reporte de cobertura usamos elsiguinte comando: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+
+Para poder obtener y analizar el reporte de una manera visualmas comoda podemos intalar la lobreria report generator y ejecutar el comando:
+reportgenerator "-reports:coverage.cobertura.xml” "-targetdir:coverage-report" -reporttypes:html;  
+Importante: debemos indicar el archivo del reporte egenraado con el anterior comadno y la carpeta donde se genarara visualmente nuestro reporte
+
+Para obtener un reporte visual tambien podemos usar la extencion llamada Fine Code Coverage
+
+
