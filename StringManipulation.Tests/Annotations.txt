@@ -17,3 +17,11 @@ de clases y interfaces. Estos objetos simulados son útiles en pruebas unitarias
 verificar su comportamiento sin depender de implementaciones reales de clases o interfaces.
 
 El metodo Setup nos permite configurar una funcion que tenga un mock
+
+La cobertura de pruebas nos ayuda a medir que tan efectivas son la pruebas que estamos realizando. La cobertura de pruebas se pude medir para saber que tanto de logica estamos cubriendo con las pruebas que implementamos.
+Por lo general un procentaje nos indica que tan efectiva es, dicho porcentaje deberia ser entre 70 y 80, y si se puede, más. Existen herraminetas que nos ayuda a conocer ese porcentaje y a otras cosas. Por ejemplo:
+	NCover (antigua)
+	OpenCover (antigua)
+	dotCover-jetBrains
+	Fine Code Coverage (Se apolla sobre un libreria)
+	Libreria coverlet (usada en el proyecto)
