@@ -25,3 +25,7 @@ Por lo general un procentaje nos indica que tan efectiva es, dicho porcentaje de
 	dotCover-jetBrains
 	Fine Code Coverage (Se apolla sobre un libreria)
 	Libreria coverlet (usada en el proyecto)
+
+Podemos configurara coverlet, por ejemplo: dotnet test /p:CollectCoverage=true /p:Include="[*]StringManipulation.*"
+Con el ejemplo amterior omitimos todo lo que no pertenesca al namespace StringManipulation
+Si usamos el atributo [ExcludeFromCodeCoverage] el comando seria: dotnet test /p:CollectCoverage=true /p:ExcludeByAttribute="ExcludeFromCodeCoverage"

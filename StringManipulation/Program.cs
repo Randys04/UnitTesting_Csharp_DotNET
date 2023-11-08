@@ -1,7 +1,10 @@
 ﻿
 using Microsoft.Extensions.Logging;
 using StringManipulation;
+using System.Diagnostics.CodeAnalysis;
 
+//atributo para excluir clases en coverlet
+[ExcludeFromCodeCoverage]
 internal class Program
 {
     private static void Main(string[] args)
